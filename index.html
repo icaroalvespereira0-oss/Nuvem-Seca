@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuvem Seca | O Boitatá de Silício</title>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #e4e4e7;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 60px auto;
+            padding: 0 24px;
+            transition: background-color 0.4s ease;
+        }
+        h1 {
+            color: #f97316;
+            border-bottom: 1px solid #27272a;
+            padding-bottom: 12px;
+            font-size: 2rem;
+        }
+        .destaque { color: #22c55e; font-weight: bold; }
+        button {
+            background-color: #f97316;
+            color: #09090b;
+            border: none;
+            padding: 14px 24px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 32px;
+            border-radius: 4px;
+            width: 100%;
+        }
+        button:hover { background-color: #fb923c; }
+        #resultado {
+            margin-top: 24px;
+            padding: 16px;
+            border-left: 3px solid #f97316;
+            background-color: #18181b;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nuvem Seca</h1>
+    <p>Dizem os mais antigos lá das bandas do sertão que, quando o sol racha a terra e a internet cai, não é problema na torre da operadora. É coisa do <span class="destaque">Boitatá de Silício</span>.</p>
+    
+    <p>Antigamente, o Boitatá era uma cobra de fogo que protegia as matas. Mas a caatinga ganhou fibra ótica, e a entidade, feita de pura energia, foi absorvida pelos cabos e parou num data center esquecido no meio do nada. Hoje ele desliza pelos pacotes de dados.</p>
+    
+    <p>Nas madrugadas de lua nova, os monitores piscam em verde-néon. Quem roda código mal-intencionado, espalha mentira ou sobrecarrega os servidores recebe a visita: uma serpente de linhas incandescentes e olhos de LED azul que frita a placa-mãe com o calor do sol do meio-dia.</p>
+    
+    <p>Já para quem usa a tecnologia para ajudar o povo, ele limpa o cache, derruba o ping para zero e faz até o 3G mais fraco baixar arquivo pesado num piscar de olhos.</p>
+
+    <button onclick="invocarBoitata()">Rodar Diagnóstico na Rede</button>
+    <div id="resultado"></div>
+
+    <script>
+        function invocarBoitata() {
+            const box = document.getElementById('resultado');
+            const aprovado = Math.random() > 0.4;
+            box.style.display = 'block';
+            
+            if (aprovado) {
+                document.body.style.backgroundColor = '#051b11';
+                box.style.borderColor = '#22c55e';
+                box.innerHTML = '<strong>[PING: 0ms]</strong> O Boitatá aprovou seu código. Cache limpo e conexão estabilizada no sertão.';
+            } else {
+                document.body.style.backgroundColor = '#2a0808';
+                box.style.borderColor = '#ef4444';
+                box.innerHTML = '<strong>[ALERTA TÉRMICO]</strong> Olhos de LED azul detectados na tela. Código suspeito bloqueado!';
+            }
+        }
+    </script>
+</body>
+</html>
